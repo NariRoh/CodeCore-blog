@@ -5,13 +5,18 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
   end
 
   def create
     @post = Post.new(post_params)
-    @post.save
 
-    redirect_to @post
+    if @post.save
+      redirect_to @post
+    else
+      render 'new'
+      # if I use redirect_to here, I will lose all content I wrote inside the form
+    end
   end
 
   def show
@@ -21,7 +26,8 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit([:title, :body])
   end
+
 
 end
