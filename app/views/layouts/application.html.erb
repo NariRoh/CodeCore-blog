@@ -14,7 +14,7 @@
     <div id="sidebar">
       <div id="logo">
         <%= link_to root_path do %>
-          <%#= img_tag "logo.svg" %>
+          <%#= image_tag "logo.svg" %>
         <% end %>
       </div>
 
@@ -26,14 +26,12 @@
 
       <ul>
         <li class="category">Social</li>
-        <li><a href="#">Facebook</a></li>
         <li><a href="#">Github</a></li>
-        <li><a href="#">Instagram</a></li>
         <li><a href="#">Email</a></li>
       </ul>
 
       <% if !user_signed_in? %>
-        <p class="sign_in">Admin Login</p>
+        <p class="sign_in"><%= link_to "Admin Login", user_session_path %></p>
       <% end %>
     </div>
 

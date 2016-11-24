@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post
     else
-      render 'new'
+      render 'new' # or :new
       # if I use redirect_to here, I will lose all content I wrote inside the form
     end
   end
