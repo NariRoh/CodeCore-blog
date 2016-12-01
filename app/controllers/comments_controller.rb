@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(params[:comment].permit(:name, :body))
 
-    # RJ: I think that you can use a shortcut for post_path(@post)... 
+    # RJ: I think that you can use a shortcut for post_path(@post)...
     # redirect_to @post
     redirect_to post_path(@post)
   end
@@ -16,5 +16,9 @@ class CommentsController < ApplicationController
 
     redirect_to post_path(@post)
   end
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> master
 end
